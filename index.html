@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm So Foldy | Children's Book Series</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fcf9f2;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background: #d35400;
+        }
+
+        /* Hero Section (With Background Image) */
+        #hero {
+            background: linear-gradient(rgba(41, 128, 185, 0.75), rgba(52, 152, 219, 0.75)), url('hero-background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            padding: 120px 0;
+            text-align: center;
+        }
+        #hero h1 {
+            color: #fff;
+            font-size: 3.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Featured Books */
+        #books {
+            padding: 60px 0;
+            text-align: center;
+        }
+        #books h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        .book-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .book-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            width: 280px;
+        }
+        .book-card h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .carousel img.slide {
+            display: none; /* Hides all images by default */
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .carousel img.active {
+            display: block; /* Only shows the active image */
+        }
+        /* Navigation Arrows */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 8px 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s ease;
+            user-select: none;
+            background-color: rgba(0,0,0,0.4);
+            border: none;
+        }
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Value Section */
+        #value {
+            background: #fff;
+            padding: 60px 0;
+        }
+        .value-content {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+        .value-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .value-item {
+            width: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        /* Authors Section */
+        #authors {
+            padding: 60px 0;
+            background: #f1f2f6;
+            text-align: center;
+        }
+        #authors .author-content {
+            max-width: 700px;
+            margin: auto;
+        }
+        .author-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: block;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="hero">
+        <div class="container">
+            <h1>I'm So Foldy</h1>
+            <p>Unfolding geometric concepts for young readers through the magic of origami storytelling.</p>
+            <a href="#books" class="btn">Discover the Magic</a>
+        </div>
+    </header>
+
+    <section id="books">
+        <div class="container">
+            <h2>The Complete Series</h2>
+            <div class="book-grid">
+                
+                <div class="book-card">
+                    <div class="carousel" id="carousel1">
+                        <img src="i'msofoldycover.png" class="slide active" alt="I'm So Foldy Cover">
+                        <img src="imsofoldy2.png" class="slide" alt="Interior Page 1">
+                        <img src="imsofoldy1.png" class="slide" alt="Interior Page 2">
+                        <img src="imsofoldy3.png" class="slide" alt="Interior Page 3">
+                        
+                        <button class="prev" onclick="moveSlide('carousel1', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('carousel1', 1)">&#10095;</button>
+                    </div>
+                    <h3>I'm So Foldy</h3>
+                    <p>The original adventure! Meet our folded friends and discover the magic of geometry through the art of origami.</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="carousel" id="carousel2">
+                        <img src="holdmecover.png" class="slide active" alt="Hold Me Cover">
+                        <img src="holdme3.png" class="slide" alt="Interior Page 1">
+                        <img src="holdme2.png" class="slide" alt="Interior Page 2">
+			<img src="holdme4.png" class="slide" alt="Interior Page 3">
+                        
+                        <button class="prev" onclick="moveSlide('carousel2', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('carousel2', 1)">&#10095;</button>
+                    </div>
+                    <h3>Hold Me</h3>
+                    <p>A heartwarming tale exploring connection and geometry, perfect for winding down during family reading time.</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="carousel" id="carousel3">
+                        <img src="hideandseekcover.png" class="slide active" alt="Hide and Seek Cover">
+                        <img src="hideandseek2.png" class="slide" alt="Interior Page 1">
+                        <img src="hideandseek3.png" class="slide" alt="Interior Page 2">
+                        <img src="hideandseek4.png" class="slide" alt="Interior Page 3">
+                        
+                        <button class="prev" onclick="moveSlide('carousel3', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('carousel3', 1)">&#10095;</button>
+                    </div>
+                    <h3>Hide and Seek</h3>
+                    <p>Join our folded friends in a playful game that introduces kids to shapes, spatial awareness, and problem-solving!</p>
+                </div>
+
+            </div>
+            <br>
+            <a href="#" class="btn" style="margin-top: 20px;">Buy the Books</a>
+        </div>
+    </section>
+
+    <section id="value">
+        <div class="container value-content">
+            <h2>Why Kids & Parents Love It</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <h3>🔺 Engaging Geometry</h3>
+                    <p>Making math and shapes approachable through fun, animated characters.</p>
+                </div>
+                <div class="value-item">
+                    <h3>💡 Creative Problem Solving</h3>
+                    <p>Using the art of origami to inspire out-of-the-box thinking.</p>
+                </div>
+                <div class="value-item">
+                    <h3>👨‍👩‍👦 Family Fun</h3>
+                    <p>Beautifully designed to be read aloud together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="authors">
+        <div class="container">
+            <div class="author-content">
+                <img src="family-photo.jpg" alt="Gabe Givnish and his sons" class="author-photo">
+                <h2>Meet the Creators</h2>
+                <p>Gabe Givnish and his two sons are the creative team behind the <strong>I'm So Foldy</strong> series. Inspired by family reading time and a love for creative learning, they built a world where geometry comes to life.</p>
+                <p><em>Illustrations beautifully brought to life with the help of Nano Banana.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Want to know when the next Foldy adventure drops?</p>
+            <p>Join the Newsletter: <a href="#" style="color: #3498db; text-decoration: underline;">Sign up here</a></p>
+            <br>
+            <p>&copy; 2026 Gabe Givnish. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function moveSlide(carouselId, step) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('.slide');
+            let activeIndex = 0;
+
+            slides.forEach((slide, index) => {
+                if (slide.classList.contains('active')) {
+                    activeIndex = index;
+                    slide.classList.remove('active');
+                }
+            });
+
+            let newIndex = activeIndex + step;
+            
+            if (newIndex >= slides.length) {
+                newIndex = 0;
+            } else if (newIndex < 0) {
+                newIndex = slides.length - 1;
+            }
+
+            slides[newIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
