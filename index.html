@@ -42,6 +42,18 @@
             background: #d35400;
         }
 
+        /* New Button Styles for Book Cards */
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.95rem;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
         /* Hero Section (With Background Image) */
         #hero {
             background: linear-gradient(rgba(41, 128, 185, 0.75), rgba(52, 152, 219, 0.75)), url('images/hero-background.png');
@@ -86,10 +98,15 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             padding: 30px;
             width: 280px;
+            display: flex;
+            flex-direction: column;
         }
         .book-card h3 {
             color: #e67e22;
             margin-bottom: 10px;
+        }
+        .book-card p {
+            flex-grow: 1; /* Keeps buttons aligned at the bottom if text length varies */
         }
 
         /* Carousel Styles */
@@ -222,6 +239,10 @@
                     </div>
                     <h3>I'm So Foldy</h3>
                     <p>The original adventure! Meet our folded friends and discover the magic of geometry through the art of origami.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-small">Paperback</a>
+                        <a href="#" class="btn btn-small">Hardcover</a>
+                    </div>
                 </div>
 
                 <div class="book-card">
@@ -237,6 +258,10 @@
                     </div>
                     <h3>Hold Me</h3>
                     <p>A heartwarming tale exploring connection and geometry, perfect for winding down during family reading time.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-small">Paperback</a>
+                        <a href="#" class="btn btn-small">Hardcover</a>
+                    </div>
                 </div>
 
                 <div class="book-card">
@@ -251,6 +276,10 @@
                     </div>
                     <h3>Hide and Seek</h3>
                     <p>Join our folded friends in a playful game that introduces kids to shapes, spatial awareness, and problem-solving!</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-small">Paperback</a>
+                        <a href="#" class="btn btn-small">Hardcover</a>
+                    </div>
                 </div>
 
             </div>
@@ -264,7 +293,7 @@
             <h2>Why Kids & Parents Love It</h2>
             <div class="value-grid">
                 <div class="value-item">
-                    <h3>🔺 Engaging Geometry</h3>
+                    <h3>🧩 Engaging Geometry</h3>
                     <p>Making math and shapes approachable through fun, animated characters.</p>
                 </div>
                 <div class="value-item">
